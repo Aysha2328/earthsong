@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f"><title>EARTHSONG — Hear the changing Earth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<header><a class="brand" href="#"><b>E</b><span>EARTH<span>SONG</span><small>THE EARTH INFORMATION JUKEBOX</small></span></a><div class="top"><i></i> NASA POWER DATA <label>EARTH OBSERVATION STUDIO</label></div></header>
+<main>
+<section class="hero"><div><small class="eyebrow">A NEW WAY TO EXPERIENCE OUR PLANET</small><h1>Hear the<br><em>changing</em> Earth.</h1><p>Turn NASA Earth science data into sound. Explore atmospheric conditions, watch the data move, and listen to the planet's changing patterns.</p><a class="cta" href="#studio">Enter sound studio ↘</a><div class="micro">VISUALIZE · LISTEN · UNDERSTAND</div></div>
+<div class="earth-art" aria-label="Illustrated Earth globe"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="planet"><i class="continent c1"></i><i class="continent c2"></i><i class="continent c3"></i><i class="cloud cl1"></i><i class="cloud cl2"></i></div><small>● ONE PLANET. MANY STORIES.</small></div></section>
+<section>
+<div class="section-head"><div><small class="eyebrow">01 / LIVE DATA FEED</small><h2>Earth, right now.</h2></div><div class="status"><i></i><span id="feedStatus">Connecting to NASA POWER…</span></div></div>
+<div class="location"><div class="loc-title"><b>⌖</b><span><strong>Observation point</strong><small>Choose a location by latitude and longitude</small></span></div>
+<label>LATITUDE<input id="latitude" type="number" min="-90" max="90" step=".01" value="9.50"></label>
+<label>LONGITUDE<input id="longitude" type="number" min="-180" max="180" step=".01" value="76.30"></label>
+<button id="updateLocation">Update location</button><button id="useLocation" class="quiet">Use my location ↗</button></div>
+<div class="metrics"><article class="metric featured"><small>NEAR-SURFACE AIR TEMPERATURE <b>℃</b></small><strong><span id="temperatureValue">--</span><sup>°C</sup></strong><footer id="temperatureTime">Waiting for latest available observation</footer></article>
+<article class="metric"><small>RELATIVE HUMIDITY <b>◌</b></small><strong><span id="humidityValue">--</span><sup>%</sup></strong><footer>NASA POWER · hourly estimate</footer></article>
+<article class="metric"><small>WIND SPEED <b>〰</b></small><strong><span id="windValue">--</span><sup>m/s</sup></strong><footer>At 10 metres above surface</footer></article></div>
+<div class="note">ⓘ NASA POWER provides gridded, model/reanalysis-based hourly estimates. “Latest” means the newest observation currently available from NASA, not a live ground-station reading. Data refreshes every 30 minutes.</div>
+</section>
+<section id="studio"><div class="section-head"><div><small class="eyebrow">02 / DATA SONIFICATION</small><h2>Give data a voice.</h2></div><div class="tag">SOUND STUDIO <b>●</b></div></div>
+<div class="studio"><article class="sound-card"><small class="eyebrow">NASA POWER · T2M</small><h3>Temperature melody</h3><p>Each hourly temperature value is mapped to a musical pitch. Higher temperatures create higher tones.</p>
+<div class="visual" id="soundVisual"><div class="bars" id="bars"></div></div>
+<div class="controls"><button id="playButton">▶ &nbsp;Play data sound</button><button id="stopButton" disabled>Stop</button></div><div id="soundStatus" class="caption">Ready · Uses latest available hourly temperature values</div></article>
+<article class="chart-card"><div class="chart-title"><div><small class="eyebrow">RECENT HOURLY OBSERVATIONS</small><h3>Temperature timeline</h3></div><span>°C</span></div><div class="chart-wrap"><canvas id="temperatureChart"></canvas></div><footer><span>NASA POWER · T2M</span><span id="chartRange">Last available hours</span></footer></article></div>
+</section>
+<section><small class="eyebrow">03 / HOW IT WORKS</small><h2>From Earth data to sound.</h2><div class="steps">
+<article><b>01</b><i>◉</i><h3>Collect</h3><p>Retrieve hourly meteorological data from NASA POWER.</p></article>
+<article><b>02</b><i>⌁</i><h3>Process</h3><p>Read temperature values and arrange them by observation time.</p></article>
+<article><b>03</b><i>♫</i><h3>Sonify</h3><p>Map each temperature value to a sound frequency.</p></article>
+<article><b>04</b><i>◌</i><h3>Experience</h3><p>Listen to the data while exploring its visual timeline.</p></article></div></section>
+<footer class="page-footer"><b>EARTHSONG · NASA SPACE APPS CHALLENGE</b><span>Data: <a href="https://power.larc.nasa.gov/" target="_blank" rel="noopener">NASA POWER Project</a></span><small>This educational sonification is not a weather forecast or a substitute for local observations.</small></footer>
+</main><div id="toast" role="status"></div><script src="script.js"></script></body></html>
